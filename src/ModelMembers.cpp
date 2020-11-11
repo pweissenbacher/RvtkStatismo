@@ -96,8 +96,8 @@ SEXP LoadModel(SEXP modelname_){
     CharacterVector modelname(modelname_);
     shared_ptr<vtkStandardMeshRepresenter> representer(vtkStandardMeshRepresenter::Create());
     std::string modelFilename = as<std::string>(modelname);
-  
-    shared_ptr<vtkMeshModel> model(vtkMeshModel::Load(representer.get(), modelFilename));
+	
+    shared_ptr<vtkMeshModel> model(statismo::IO<vtkPolyData>::LoadStatisticalModel(representer.get(), modelFilename));
     S4 out = statismo2pPCA(model);
     return out;
   } catch (std::exception& e) {
