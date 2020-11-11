@@ -1,5 +1,6 @@
 #include "ModelMembers.h"
 #include "Helpers.h"
+#include "StatismoIO.h"
 
 using namespace Rcpp;
 using namespace Eigen;
